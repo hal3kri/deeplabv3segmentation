@@ -34,13 +34,7 @@ class _ASPPModule(nn.Module):
 
 class ASPP(nn.Module):
     def __init__(self, backbone, output_stride, BatchNorm):
-        super(ASPP, self).__init__()
-        if backbone == 'drn':
-            inplanes = 512
-        elif backbone == 'mobilenet':
-            inplanes = 320
-        else:
-            inplanes = 2048
+        inplanes = 2048
         if output_stride == 16:
             dilations = [1, 6, 12, 18]
         elif output_stride == 8:
